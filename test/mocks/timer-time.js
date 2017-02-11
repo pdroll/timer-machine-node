@@ -1,12 +1,13 @@
-var Timer        = require('../../lib/timer')
-var originalTime = Timer.prototype.time
+const Timer = require('../../lib/timer');
+
+const originalTime = Timer.prototype.time;
 
 exports.expect = function (val) {
   Timer.prototype.time = function () {
-    return val
-  }
-}
+    return val;
+  };
+};
 
 exports.revert = function () {
-  Timer.prototype.time = originalTime
-}
+  Timer.prototype.time = originalTime;
+};

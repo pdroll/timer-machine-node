@@ -1,46 +1,38 @@
-/*jshint expr: true*/
+const should = require('should');
+const Timer = require('../lib/timer');
 
-var should = require('should')
-var Timer  = require('../lib/timer')
+describe('The Timer function', () => {
+  let foo;
 
-describe('The Timer function', function () {
+  before(() => {
+    foo = Timer.get('foo');
+  });
 
-  var foo
-
-  before(function () {
-    foo = Timer.get('foo')
-  })
-
-  describe('get static method', function () {
-
-    it('should create a new Timer if it does not exist', function () {
+  describe('get static method', () => {
+    it('should create a new Timer if it does not exist', () => {
       Timer.get('bar')
         .should.be.an.instanceof(Timer)
-        .and.should.not.equal(foo)
-      Timer.destroy('bar')
-    })
+        .and.should.not.equal(foo);
+      Timer.destroy('bar');
+    });
 
-    it('should return a reference to an existing named timer', function () {
-      Timer.get('foo').should.equal(foo)
-    })
+    it('should return a reference to an existing named timer', () => {
+      Timer.get('foo').should.equal(foo);
+    });
+  });
 
-  })
+  describe('destroy static method', () => {
+    it('should destroy a named timer', () => {
+      Timer.destroy('foo');
+      Timer.get('foo').should.not.equal(foo);
+    });
 
-  describe('destroy static method', function () {
+    it('should return true if the timer existed', () => {
+      Timer.destroy('foo').should.be.true;
+    });
 
-    it('should destroy a named timer', function () {
-      Timer.destroy('foo')
-      Timer.get('foo').should.not.equal(foo)
-    })
-
-    it('should return true if the timer existed', function () {
-      Timer.destroy('foo').should.be.true
-    })
-
-    it('should return false if the timer did not exist', function () {
-      Timer.destroy('bar').should.be.false
-    })
-
-  })
-
-})
+    it('should return false if the timer did not exist', () => {
+      Timer.destroy('bar').should.be.false;
+    });
+  });
+});

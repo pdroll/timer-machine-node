@@ -4,12 +4,12 @@
   "description": "A lightweight, pause-able timer class",
   "main": "lib/timer.js",
   "scripts": {
-    "test": "jshint lib && mocha",
+    "test": "mocha",
     "debug-test": "mocha debug"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/brentburgoyne/timer-machine.git"
+    "url": "git://github.com:pdroll/timer-machine-node.git"
   },
   "keywords": [
     "timer",
@@ -20,11 +20,13 @@
   "author": "Brent Burgoyne",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brentburgoyne/timer-machine/issues"
+    "url": "https://github.com/pdroll/timer-machine-node/issues"
   },
-  "homepage": "https://github.com/brentburgoyne/timer-machine",
+  "homepage": "https://github.com/pdroll/timer-machine-node",
   "devDependencies": {
-    "jshint": "^2.5.2",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0",
     "mocha": "^1.20.1",
     "should": "^4.0.4",
     "sinon": "^1.10.3"

@@ -1,45 +1,41 @@
-/*jshint expr: true*/
+const should = require('should');
+const Timer = require('../lib/timer');
+const EventEmitter = require('events').EventEmitter;
+const sinon = require('sinon');
 
-var should       = require('should')
-var Timer        = require('../lib/timer')
-var EventEmitter = require('events').EventEmitter
-var sinon        = require('sinon')
+describe('The Timer/EventEmitter object', () => {
+  let foo;
+  let spy;
 
-describe('The Timer/EventEmitter object', function () {
+  beforeEach(() => {
+    foo = new Timer();
+    spy = sinon.spy();
+  });
 
-  var foo
-  var spy
+  it('should be an instance of EventEmitter', () => {
+    foo.should.be.instanceof(EventEmitter);
+  });
 
-  beforeEach(function () {
-    foo = new Timer()
-    spy = sinon.spy()
-  })
+  it('should emit start event when started', () => {
+    foo.on('start', spy);
+    foo.start();
+    spy.called.should.be.true;
+  });
 
-  it('should be an instance of EventEmitter', function () {
-    foo.should.be.instanceof(EventEmitter)
-  })
+  it('should emit stop event when stopped', () => {
+    foo.on('stop', spy);
+    foo.start();
+    spy.called.should.be.false;
+    foo.stop();
+    spy.called.should.be.true;
+  });
 
-  it('should emit start event when started', function () {
-    foo.on('start', spy)
-    foo.start()
-    spy.called.should.be.true
-  })
-
-  it('should emit stop event when stopped', function () {
-    foo.on('stop', spy)
-    foo.start()
-    spy.called.should.be.false
-    foo.stop()
-    spy.called.should.be.true
-  })
-
-  it('should emit time event when emitTime is called', function () {
-    var expected = 47
-    foo._total   = expected
-    foo.on('time', spy)
-    foo.emitTime()
-    spy.called.should.be.true
-    sinon.assert.calledWith(spy, expected)
-  })
-
-})
+  it('should emit time event when emitTime is called', () => {
+    const expected = 47;
+    foo._total = expected;
+    foo.on('time', spy);
+    foo.emitTime();
+    spy.called.should.be.true;
+    sinon.assert.calledWith(spy, expected);
+  });
+});
