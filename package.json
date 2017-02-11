@@ -1,5 +1,5 @@
 {
-  "name": "timer-machine",
+  "name": "timer-machine-node",
   "version": "1.1.0",
   "description": "A lightweight, pause-able timer class",
   "main": "lib/timer.js",
@@ -17,7 +17,7 @@
     "pause",
     "stopwatch"
   ],
-  "author": "Brent Burgoyne",
+  "author": "Brent Burgoyne, Pete Droll",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pdroll/timer-machine-node/issues"

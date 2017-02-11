@@ -1,23 +1,21 @@
 # Timer Machine
 
-[![npm](http://img.shields.io/npm/v/timer-machine.svg?style=flat)](https://www.npmjs.org/package/timer-machine)
-[![Travis](http://img.shields.io/travis/brentburgoyne/timer-machine.svg?style=flat)](https://travis-ci.org/brentburgoyne/timer-machine)
-[![Code Climate](http://img.shields.io/codeclimate/github/brentburgoyne/timer-machine.svg?style=flat)](https://codeclimate.com/github/brentburgoyne/timer-machine)
-[![Code Climate Coverage](http://img.shields.io/codeclimate/coverage/github/brentburgoyne/timer-machine.svg?style=flat)](https://codeclimate.com/github/brentburgoyne/timer-machine)
-[![Gemnasium](http://img.shields.io/gemnasium/brentburgoyne/timer-machine.svg?style=flat)](https://gemnasium.com/brentburgoyne/timer-machine)
+<!--[![npm](http://img.shields.io/npm/v/timer-machine-node.svg?style=flat)](https://www.npmjs.org/package/timer-machine-node)-->
 
-A simple, flexible timer for JavaScript.
+A simple, flexible timer for JavaScript. Under the hood the Node's `process.hrtime()` is used to calculate time between intervals. `hrtime` (as opposed to `Date().getTime()` or any date/time based timing mechanism) are [not subject to clock drift and allow for more accurate measurements](https://nodejs.org/api/process.html#process_process_hrtime_time). You can read [this blog post](https://blog.tompawlak.org/measure-execution-time-nodejs-javascript) for more information on `process.hrtime`.
+
+A fork of the great [timer-machine](https://github.com/brentburg/timer-machine) by Brent Burgoyne.
 
 ## Installation
 
 ```bash
-$ npm install timer-machine --save
+$ npm install timer-machine-node --save
 ```
 
 ## Basic Usage
 
 ```js
-var Timer = require('timer-machine')
+var Timer = require('timer-machine-node')
 var myTimer = new Timer()
 
 myTimer.start()
@@ -256,7 +254,7 @@ $ npm test
 
 ## License
 
-Copyright (c) 2014 Brent Burgoyne.
+Copyright (c) 2017 Pete Droll.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
