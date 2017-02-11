@@ -1,3 +1,5 @@
+'use strict';
+
 const should = require('should');
 const Timer = require('../lib/timer');
 const EventEmitter = require('events').EventEmitter;

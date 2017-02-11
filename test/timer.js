@@ -1,3 +1,5 @@
+'use strict';
+
 const should = require('should');
 const sinon = require('sinon');
 const Timer = require('../lib/timer');
