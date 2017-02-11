@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com:pdroll/timer-machine-node.git"
+    "url": "https://github.com/pdroll/timer-machine-node"
   },
   "keywords": [
     "timer",

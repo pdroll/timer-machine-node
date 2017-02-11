@@ -1,6 +1,6 @@
 # Timer Machine
 
-<!--[![npm](http://img.shields.io/npm/v/timer-machine-node.svg?style=flat)](https://www.npmjs.org/package/timer-machine-node)-->
+[![npm](http://img.shields.io/npm/v/timer-machine-node.svg?style=flat)](https://www.npmjs.org/package/timer-machine-node)
 
 A simple, flexible timer for JavaScript.
 
