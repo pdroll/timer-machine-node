@@ -2,7 +2,9 @@
 
 <!--[![npm](http://img.shields.io/npm/v/timer-machine-node.svg?style=flat)](https://www.npmjs.org/package/timer-machine-node)-->
 
-A simple, flexible timer for JavaScript. Under the hood the Node's `process.hrtime()` is used to calculate time between intervals. `hrtime` (as opposed to `Date().getTime()` or any date/time based timing mechanism) are [not subject to clock drift and allow for more accurate measurements](https://nodejs.org/api/process.html#process_process_hrtime_time). You can read [this blog post](https://blog.tompawlak.org/measure-execution-time-nodejs-javascript) for more information on `process.hrtime`.
+A simple, flexible timer for JavaScript.
+
+Under the hood, Node's `process.hrtime()` is used to calculate time between intervals. `hrtime` (as opposed to `Date().getTime()` or any date/time based timing mechanism) are [not subject to clock drift and allow for more accurate measurements](https://nodejs.org/api/process.html#process_process_hrtime_time). You can read [this blog post](https://blog.tompawlak.org/measure-execution-time-nodejs-javascript) for more information on `process.hrtime`.
 
 A fork of the great [timer-machine](https://github.com/brentburg/timer-machine) by Brent Burgoyne.
 
